@@ -1,0 +1,14 @@
+function res = img_filter(img)
+    if length(size(img)) ~= 2
+        return
+    end
+    filter_size = 5;
+    filter = ones(filter_size, filter_size) / (filter_size * filter_size);
+    padding = (filter_size - 1) / 2;
+    [r, c] = size(img);
+    res = zeros(r + 2 * padding, c + 2 * padding);
+    res(padding+1:r-padding, padding+1:c-padding) = img;
+    for i = padding+1:r-padding
+        for j = padding+1:c-padding
+            
+end
